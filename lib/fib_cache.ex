@@ -1,18 +1,7 @@
 defmodule FibCache do
-  @moduledoc """
-  Documentation for FibCache.
-  """
+  alias FibCache.Cache
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> FibCache.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  defdelegate get(), to: Cache
+  defdelegate update(key, value), to: Cache
+  defdelegate get_and_update(key, value), to: Cache
 end
